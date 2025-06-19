@@ -22,21 +22,53 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // code goes here
-        // link the elements from the GUI to the background
-        val playlist = findViewById<Button>(R.id.Playlistbtn)
-        val Exit = findViewById<Button>(R.id.Exitbtn)
-        val screenTwo2 =findViewById<Button>(R.id.ScreenTwobtn)
+        // 1. Link elements from the GUI to the background
+        
+       var edtPlaylistName = findViewById<Button>(R.id.Playlistbtn
+           var btnExit = findViewById<Button>(R.id.Exitbtn)             
+        var Mainbtn = findViewById<Button>(R.id.ScreenTwobtn) 
 
-        Exit.setOnClickListener {
-            val username = Playlistbtn..text.toString()
-            if (username.isEmpty()) {
-                Toast.makeText(this,"Please add a playlist" , Toast.LENGTH_SHORT).show()
+        
+
+        // Listener for the "Add Playlist" or "Process Playlist" button
+            Playlistbtn.setOnClickListener {
+            val playlistName = etPlaylistName.text.toString().trim() 
+
+            if (playlistName.isEmpty()) {
+                // If the input field is empty, show a toast message
+                Toast.makeText(this, "Please enter a playlist name!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Playlist '$playlistName' added/processed!", Toast.LENGTH_SHORT).show()
+                
+                etPlaylistName.text.clear()
             }
-            val intent = Intent(this, MainActivity:class.java).putExtra("songTitle")
-            startActivity(intent)
-            finish()
         }
-    }//end of onCreate
-}//end of MainActivity
+
+        // Listener for the "Exit" button
+        Exitbtn.setOnClickListener {
+            
+            finishAffinity() 
+            
+            // finish()
+        }
+
+        // Listener for the "Go to Screen Two" button
+        Mainbtn.setOnClickListener {
+            val intent = Intent(this, ScreenTwo2::class.java) // Correct class reference
+            // If you need to pass data, do it here:
+            // intent.putExtra("someKey", "someValue")
+            startActivity(intent)
+            // You might or might not want to finish MainActivity here,
+            // depending on if you want to allow the user to return to it.
+            // If you do, don't call finish().
+            // If you don't, call finish().
+        }
+
+    } // end of onCreate
+} // end of MainActivity
+
+
+
+
+
 
