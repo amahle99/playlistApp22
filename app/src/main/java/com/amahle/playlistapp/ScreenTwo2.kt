@@ -48,9 +48,9 @@ class ScreenTwo2 : AppCompatActivity() {
       Displays all songs from the globally accessible playlist.
      /
     private fun displayAllSongs() {
-        val outputStringBuilder = StringBuilder() // Use a clear variable name
+        val outputStringBuilder = StringBuilder() 
 
-        // Check if the playlist is empty
+        
         if (MainActivity.playlist.isEmpty()) {
             outputStringBuilder.append("The playlist is currently empty. Add some songs from the main screen!\n")
         } else {
@@ -59,11 +59,11 @@ class ScreenTwo2 : AppCompatActivity() {
             for (song in MainActivity.playlist) {
                 outputStringBuilder.append("Title: ${song.title}\n")
                 outputStringBuilder.append("Artist: ${song.artist}\n")
-                outputStringBuilder.append("Rating: ${song.rating}/5\n") // Assuming rating is out of 5
+                outputStringBuilder.append("Rating: ${song.rating}/5\n")
                 outputStringBuilder.append("Comment: ${song.comment}\n\n")
             }
         }
-        // Set the final string to the TextView
+        
         displayListTextView.text = outputStringBuilder.toString()
     }
 
