@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             val playlistName = etPlaylistName.text.toString().trim() 
 
             if (playlistName.isEmpty()) {
-                // If the input field is empty, show a toast message
+                
                 Toast.makeText(this, "Please enter a playlist name!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Playlist '$playlistName' added/processed!", Toast.LENGTH_SHORT).show()
@@ -52,16 +52,13 @@ class MainActivity : AppCompatActivity() {
             // finish()
         }
 
-        // Listener for the "Go to Screen Two" button
+
         Mainbtn.setOnClickListener {
-            val intent = Intent(this, ScreenTwo2::class.java) // Correct class reference
-            // If you need to pass data, do it here:
+            val intent = Intent(this, ScreenTwo2::class.java) 
+    
             // intent.putExtra("someKey", "someValue")
             startActivity(intent)
-            // You might or might not want to finish MainActivity here,
-            // depending on if you want to allow the user to return to it.
-            // If you do, don't call finish().
-            // If you don't, call finish().
+            
         }
 
     } // end of onCreate
