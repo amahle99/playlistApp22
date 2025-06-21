@@ -43,9 +43,6 @@ class ScreenTwo2 : AppCompatActivity() {
         // Optional: Display all songs when the screen first loads
         displayAllSongs()
     }
-
-    /
-      Displays all songs from the globally accessible playlist.
      /
     private fun displayAllSongs() {
         val outputStringBuilder = StringBuilder() 
@@ -73,12 +70,12 @@ class ScreenTwo2 : AppCompatActivity() {
         // Filter the playlist to get songs with a rating of 2 or more
         val filteredSongs = MainActivity.playlist.filter { song -> song.rating >= 2 }
 
-        // Check if any songs match the filter criteria
+        
         if (filteredSongs.isEmpty()) {
             outputStringBuilder.append("No songs found with a rating of 2 or higher.\n")
         } else {
             outputStringBuilder.append("--- Songs Rated 2 or Higher ---\n\n")
-            // Iterate through the filtered songs and append their details
+            
             for (song in filteredSongs) {
                 outputStringBuilder.append("Title: ${song.title}\n")
                 outputStringBuilder.append("Artist: ${song.artist}\n")
@@ -86,7 +83,7 @@ class ScreenTwo2 : AppCompatActivity() {
                 outputStringBuilder.append("Comment: ${song.comment}\n\n")
             }
         }
-        // Set the final string to the TextView
+        
         displayListTextView.text = outputStringBuilder.toString()
     }
 }
