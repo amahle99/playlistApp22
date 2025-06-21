@@ -17,16 +17,9 @@ class Activity2 : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-            //end of ViewCompat
-            //Code goes here
-            //link the elements from the GUI to the backend
-            val songtitle = findViewById<Button>(R.id.edtSongTitle)
-            val artists = findViewById<Button>(R.id.edtArtist)
-            val rate = findViewById<Button>(R.id.edtRate)
-            val comment =findViewById<Button>(R.id.edtComment)
-
+           
             }
-                finish()
+               
         }
     }
 }
